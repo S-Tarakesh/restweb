@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+    <title>ABOUT US</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="site-header"><em>"This is a journey from humble beginnings to small franchaise"</em>
+<nav>
+    <a href='{% url "home" %}'>Main</a>
+    <a href='{% url "contact" %}'> contact</a>
+</nav>
+<button id="themeToggle" style="margin-left:20px;">
+    Dark Mode
+</button>
+
+</header>
+    </header>
+    <div class="container">
+    <figure>
+        <img src="{% static 'Paul.png' %}">
+        <figcaption>Paul</figcaption>
+        This is Paul, Our humble founder.
+    </figure>
+
+    <figure>
+        <img src="{% static 'David.png' %}">
+        <figcaption>David</figcaption>
+        This is David, Our humble co-founder and intial financer for Our Beloved Shop.
+    </figure>
+
+    </div>
+</body>
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    toggleBtn.textContent =
+        document.body.classList.contains("dark")
+        ? "Light Mode"
+        : "Dark Mode";
+});
+</script>
+
+</html>
